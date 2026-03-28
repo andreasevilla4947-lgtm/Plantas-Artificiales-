@@ -3,64 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naturaleza Eterna - Plantas Artificiales Premium</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Victoria Floral | Belleza Eterna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+        
+        :root {
+            --primary-dark: #1a3c1a;
+            --emerald-vibrant: #2d6a4f;
+            --gold-accent: #d4a373;
+            --soft-cream: #fefae0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Fondo general con textura de hojas suave */
+        .bg-botanical {
+            background-color: #f8fafc;
+            background-image: url("https://www.transparenttextures.com/patterns/leaf.png");
+        }
+
+        /* Hero con la imagen solicitada por el usuario */
+        .hero-section {
+            background: linear-gradient(rgba(10, 30, 10, 0.6), rgba(10, 30, 10, 0.4)), 
+                        url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Sección intermedia con fondo de follaje denso */
+        .foliage-divider {
+            background: linear-gradient(rgba(26, 60, 26, 0.85), rgba(26, 60, 26, 0.85)), 
+                        url('https://images.unsplash.com/photo-1533038590840-1cde6e668a91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(26, 60, 26, 0.3);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #d4a373 0%, #bc8a5f 100%);
+            box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
+        }
+
+        .text-emerald-deep {
+            color: var(--primary-dark);
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .float-anim {
+            animation: floating 3s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-botanical text-slate-900">
 
-    <header>
-        <div class="container">
-            <div class="logo">Naturaleza Eterna</div>
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#catalogo">Catálogo</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-xl border-b border-green-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3 group cursor-pointer">
+                    <div class="w-10 h-10 bg-emerald-700 rounded-lg flex items-center justify-center text-white rotate-3 group-hover:rotate-0 transition-transform">
+                        <i class="fas fa-seedling text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tighter text-emerald-900">VICTORIA <span class="text-emerald-600 italic">FLORAL</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-semibold text-emerald-900/70">
+                    <a href="#inicio" class="hover:text-emerald-700 transition relative">Inicio</a>
+                    <a href="#productos" class="hover:text-emerald-700 transition relative">Colección</a>
+                    <a href="#beneficios" class="hover:text-emerald-700 transition relative">Beneficios</a>
+                    <a href="#contacto" class="hover:text-emerald-700 transition relative">Contacto</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="relative w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white hover:bg-emerald-800 transition shadow-lg">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="absolute -top-1 -right-1 bg-amber-400 text-emerald-900 text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-white">2</span>
+                    </button>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Verde todo el año, sin esfuerzo.</h1>
-            <p>Descubre nuestra colección exclusiva de plantas y árboles artificiales hiperrealistas.</p>
-            <a href="#catalogo" class="btn">Ver Catálogo</a>
+    <!-- Hero Section con la imagen solicitada -->
+    <section id="inicio" class="hero-section h-screen flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-4xl">
+            <div class="inline-block px-4 py-1.5 bg-emerald-500/30 backdrop-blur-md rounded-full border border-emerald-400/40 text-emerald-100 text-xs font-bold uppercase tracking-widest mb-6">
+                Expertos en Jardines Verticales Artificiales
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight drop-shadow-2xl">
+                Naturaleza que <br> <span class="text-amber-300 italic">Nunca Termina</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 opacity-95 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                En Victoria Floral creamos espacios verdes eternos con la selección más exclusiva de plantas hiperrealistas.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#productos" class="btn-gold text-white px-10 py-5 rounded-full font-bold text-lg transition transform hover:scale-105 shadow-xl">
+                    Explorar Productos
+                </a>
+                <a href="#contacto" class="bg-white/15 hover:bg-white/25 backdrop-blur-md text-white border border-white/40 px-10 py-5 rounded-full font-bold text-lg transition">
+                    Ver Proyectos
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="catalogo" class="catalogo container">
-        <h2>Nuestros Productos Estrella</h2>
-        <div class="productos-grid">
-            <div class="producto-card">
-                <img src="planta-1.jpg" alt="Ficus Lyrata Artificial">
-                <h3>Ficus Lyrata</h3>
-                <p>Perfecto para rincones modernos.</p>
-                <span class="precio">$89.99</span>
+    <!-- Beneficios con fondo de follaje sutil -->
+    <section id="beneficios" class="py-24 foliage-divider relative text-white">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 italic text-white underline decoration-amber-400 decoration-4 underline-offset-8">La Perfección Artificial</h2>
+                <p class="text-emerald-100 font-medium">Diseño botánico sin complicaciones para tu estilo de vida</p>
             </div>
-            <div class="producto-card">
-                <img src="planta-2.jpg" alt="Helecho Colgante Artificial">
-                <h3>Helecho Colgante</h3>
-                <p>Añade frescura a tus estanterías.</p>
-                <span class="precio">$45.50</span>
-            </div>
-            <div class="producto-card">
-                <img src="planta-3.jpg" alt="Cactus del Desierto Artificial">
-                <h3>Cactus Monumental</h3>
-                <p>Elegancia rústica sin mantenimiento.</p>
-                <span class="precio">$120.00</span>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 rounded-[3rem] text-center transition hover:bg-white group">
+                    <div class="w-20 h-20 bg-emerald-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:rotate-12 transition-transform">
+                        <i class="fas fa-leaf text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-900">Realismo Total</h3>
+                    <p class="text-slate-600 leading-relaxed">Nuestras plantas están fabricadas con materiales que imitan la textura orgánica original.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[3rem] text-center transition hover:bg-white group">
+                    <div class="w-20 h-20 bg-amber-500 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:-rotate-12 transition-transform">
+                        <i class="fas fa-clock text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-900">Ahorra Tiempo</h3>
+                    <p class="text-slate-600 leading-relaxed">Sin necesidad de riego, poda o luz solar. Tu tiempo es para disfrutar, no para mantener.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[3rem] text-center transition hover:bg-white group">
+                    <div class="w-20 h-20 bg-emerald-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:rotate-12 transition-transform">
+                        <i class="fas fa-home text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-900">Decoración Versátil</h3>
+                    <p class="text-slate-600 leading-relaxed">Perfectas para oficinas, sótanos o cualquier rincón donde una planta viva no sobreviviría.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer id="contacto">
-        <div class="container">
-            <p>&copy; 2023 Naturaleza Eterna. Plantas que duran para siempre.</p>
+    <!-- Galería de Productos -->
+    <section id="productos" class="py-24 bg-emerald-950 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16">
+                <div>
+                    <h2 class="text-5xl font-bold mb-4">Colección <span class="text-amber-400 italic">Eterna</span></h2>
+                    <p class="text-emerald-200/70">Inversiones en belleza que duran para siempre.</p>
+                </div>
+                <a href="#" class="mt-6 md:mt-0 px-8 py-3 border border-emerald-400 text-emerald-400 rounded-full hover:bg-emerald-400 hover:text-emerald-950 transition font-bold uppercase tracking-widest text-sm">Ver Catálogo</a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Producto 1 -->
+                <div class="group product-card bg-emerald-900/40 rounded-[2.5rem] overflow-hidden border border-emerald-800 p-3">
+                    <div class="relative overflow-hidden h-80 rounded-[2rem]">
+                        <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Planta Artificial" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-emerald-900/20 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Monstera Giant</h3>
+                        <p class="text-amber-300 font-bold text-2xl mb-5">$85.00</p>
+                        <button class="w-full bg-emerald-600 text-white py-4 rounded-2xl hover:bg-emerald-500 transition font-bold shadow-lg">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="group product-card bg-emerald-900/40 rounded-[2.5rem] overflow-hidden border border-emerald-800 p-3">
+                    <div class="relative overflow-hidden h-80 rounded-[2rem]">
+                        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Ficus Artificial" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Ficus Lyrata</h3>
+                        <p class="text-amber-300 font-bold text-2xl mb-5">$120.00</p>
+                        <button class="w-full bg-emerald-600 text-white py-4 rounded-2xl hover:bg-emerald-500 transition font-bold shadow-lg">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="group product-card bg-emerald-900/40 rounded-[2.5rem] overflow-hidden border border-emerald-800 p-3">
+                    <div class="relative overflow-hidden h-80 rounded-[2rem]">
+                        <img src="https://images.unsplash.com/photo-1597050210214-41d7010f63cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Palmera Artificial" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Areca Palm</h3>
+                        <p class="text-amber-300 font-bold text-2xl mb-5">$95.00</p>
+                        <button class="w-full bg-emerald-600 text-white py-4 rounded-2xl hover:bg-emerald-500 transition font-bold shadow-lg">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="group product-card bg-emerald-900/40 rounded-[2.5rem] overflow-hidden border border-emerald-800 p-3">
+                    <div class="relative overflow-hidden h-80 rounded-[2rem]">
+                        <img src="https://images.unsplash.com/photo-1509423306614-428659294613?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Suculentas Artificiales" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Set Suculentas</h3>
+                        <p class="text-amber-300 font-bold text-2xl mb-5">$35.00</p>
+                        <button class="w-full bg-emerald-600 text-white py-4 rounded-2xl hover:bg-emerald-500 transition font-bold shadow-lg">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-20 pb-10 border-t border-emerald-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex flex-col items-center mb-12">
+                <div class="w-16 h-16 bg-emerald-700 rounded-2xl flex items-center justify-center text-white mb-6 shadow-xl float-anim">
+                    <i class="fas fa-leaf text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-emerald-950 mb-4 uppercase tracking-tighter">Victoria Floral</h2>
+                <p class="text-slate-500 max-w-md">Especialistas en la creación de microclimas artificiales de lujo para residencias y espacios comerciales.</p>
+            </div>
+            
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="#" class="text-emerald-700 text-2xl hover:scale-125 transition-transform"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-emerald-700 text-2xl hover:scale-125 transition-transform"><i class="fab fa-pinterest"></i></a>
+                <a href="#" class="text-emerald-700 text-2xl hover:scale-125 transition-transform"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+            <div class="border-t border-slate-100 pt-8 text-slate-400 text-sm">
+                <p>© 2024 Victoria Floral. Diseño inspirado en la naturaleza, perfeccionado por la tecnología.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Botón WhatsApp -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="#" class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all hover:scale-110 active:scale-95 shadow-green-500/50">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
 
 </body>
 </html>
